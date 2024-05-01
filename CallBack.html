@@ -126,21 +126,24 @@
             });
       }
 
-      function filterTable(){
+       function filterTable() {
         const input = document.getElementById('searchInput').value.toUpperCase();
         const rows = document.getElementById('tablebody').getElementsByTagName('tr');
-        Array.from(rows).forEach(row => {
-          const name = row.getElementsByTagName('td')[0];
-          if(name){
-            const textValue = name.textContent || name.innerHTML ;
-            if(textValue.toUpperCase().indexOf(input) > -1){
+         Array.from(rows).forEach(row => {
+          let isMatch = false;
+          row.getElementsByTagName('td').forEach(cell => {
+            const textValue = cell.textContent || cell.innerHTML;
+            if (textValue.toUpperCase().indexOf(input) > -1) {
+                isMatch = true;
+              }
+            });
+            if (isMatch) {
               row.style.display = '';
-            }else {
+            } else {
               row.style.display = 'none';
             }
-          }
-        });
-      }
+          });
+        }
 
       function sortTable(column){
         const table = document.getElementById('cryptoTable');

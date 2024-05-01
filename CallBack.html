@@ -65,8 +65,9 @@
               <th>Symbol</th>
               <th>Current Price</th>
               <th>Total Volume</th>
-              <th>Market Cap</th>
               <th>Percentage Change (24h)</th>
+              <th>Market Cap</th>
+              
         </tr>
         </thead>
         <tbody id="tablebody"></tbody>
@@ -118,7 +119,7 @@
             <td style="text-align: right">${price}</td>
             <td style="text-align: right">${volume}</td>
             <td style="color: ${textColor};">${priceChange}</td>
-            <td style="width:70%; text-align: right"> Mkt Cap: ${marketCap}</td>
+            <td style="width:50%; text-align: right"> Mkt Cap: ${marketCap}</td>
             `;
             tableBody.appendChild(row);
 
